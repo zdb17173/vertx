@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.fran.vertx</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0</version>
+    <modules>
+        <module>example</module>
+    </modules>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <slf4j.version>1.7.21</slf4j.version>
+        <vertx.vertx.version>3.4.2</vertx.vertx.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-core</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-tcnative-boringssl-static</artifactId>
+                <version>1.1.33.Fork26</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-mongo-client</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-mongo-embedded-db</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-auth-shiro</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-auth-jdbc</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-jdbc-client</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-auth-jwt</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <!--<dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>examples-utils</artifactId>
+                <version>${vertx.vertx.version}</version>
+                <optional>true</optional>
+            </dependency>-->
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-dropwizard-metrics</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-hazelcast</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>2.3.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-templ-handlebars</artifactId>
+                <version>${vertx.vertx.version}</version>
+                <classifier>shaded</classifier>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-templ-jade</artifactId>
+                <version>${vertx.vertx.version}</version>
+                <classifier>shaded</classifier>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-templ-mvel</artifactId>
+                <version>${vertx.vertx.version}</version>
+                <classifier>shaded</classifier>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-templ-thymeleaf</artifactId>
+                <version>${vertx.vertx.version}</version>
+                <classifier>shaded</classifier>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-templ-freemarker</artifactId>
+                <version>${vertx.vertx.version}</version>
+                <classifier>shaded</classifier>
+            </dependency>
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-web-templ-pebble</artifactId>
+                <version>${vertx.vertx.version}</version>
+                <classifier>shaded</classifier>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jdk14</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
