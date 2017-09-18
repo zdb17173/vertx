@@ -11,33 +11,33 @@ import io.vertx.ext.web.Router;
  */
 public class Server extends AbstractVerticle {
 
-  // Convenience method so you can run it in your IDE
-  public static void main(String[] args) {
-    runExample(Server.class.getName());
-  }
+    // Convenience method so you can run it in your IDE
+    public static void main(String[] args) {
+        runExample(Server.class.getName());
+    }
 
-  public static void runExample(String verticleID) {
-    VertxOptions options = new VertxOptions();
-
-
-    MessagePassingQueue.Consumer<Vertx> runner = vertx -> {
-      vertx.deployVerticle(verticleID);
-    };
+    public static void runExample(String verticleID) {
+        VertxOptions options = new VertxOptions();
 
 
-    Vertx vertx = Vertx.vertx(options);
-    runner.accept(vertx);
-  }
+        MessagePassingQueue.Consumer<Vertx> runner = vertx -> {
+            vertx.deployVerticle(verticleID);
+        };
 
-  @Override
-  public void start() throws Exception {
 
-    Router router = Router.router(vertx);
+        Vertx vertx = Vertx.vertx(options);
+        runner.accept(vertx);
+    }
 
-    router.route().handler(routingContext -> {
-      routingContext.response().putHeader("content-type", "text/html").end("Hello World!");
-    });
+    @Override
+    public void start() throws Exception {
 
-    vertx.createHttpServer().requestHandler(router::accept).listen(8080);
-  }
+        Router router = Router.router(vertx);
+
+        router.route().handler(routingContext -> {
+            routingContext.response().putHeader("content-type", "text/html").end("Hello World!");
+        });
+
+        vertx.createHttpServer().requestHandler(router::accept).listen(8080);
+    }
 }
