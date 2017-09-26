@@ -12,19 +12,11 @@
     <artifactId>core</artifactId>
 
     <dependencies>
+
+        <!--vert.x core -->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-web-templ-freemarker</artifactId>
-            <version>3.4.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.ea.orbit/orbit-runtime
