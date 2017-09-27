@@ -7,6 +7,7 @@ import io.vertx.ext.asyncsql.MySQLClient;
 import io.vertx.ext.sql.ResultSet;
 import io.vertx.ext.sql.SQLClient;
 import io.vertx.ext.sql.SQLConnection;
+import io.vertx.ext.sql.UpdateResult;
 
 import java.util.List;
 import java.util.Map;
@@ -16,7 +17,7 @@ import java.util.Set;
  * http://vertx.io/docs/vertx-mysql-postgresql-client/java/
  * Created by fran on 2017/9/26.
  */
-public class TestMySqlClient {
+public class TestSimple {
 
     public static void main(String[] args){
         Vertx vertx = Vertx.vertx();
@@ -37,7 +38,7 @@ public class TestMySqlClient {
            if(con.succeeded()){
                SQLConnection conn = con.result();
                String sql = "select * from publish_news";
-               
+
                conn
                    .setQueryTimeout(5000)
                    .query(sql, res -> {
@@ -53,7 +54,11 @@ public class TestMySqlClient {
                        }else{
                            res.cause().printStackTrace();
                        }
-               });
+
+                       conn.close();
+
+                   });
+
            }else {
                con.cause().printStackTrace();
            }

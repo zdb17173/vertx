@@ -10,6 +10,7 @@
     <modules>
         <module>example</module>
         <module>core</module>
+        <module>fatjar</module>
     </modules>
     <packaging>pom</packaging>
 
