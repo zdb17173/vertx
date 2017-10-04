@@ -11,6 +11,7 @@
         <module>example</module>
         <module>core</module>
         <module>fatjar</module>
+        <module>grpc</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -89,6 +90,12 @@
                 <version>${vertx.vertx.version}</version>
                 <optional>true</optional>
             </dependency>-->
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-grpc</artifactId>
+                <version>${vertx.vertx.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>io.vertx</groupId>
