@@ -61,7 +61,7 @@ public class HelloWorldClient {
      * greeting.
      */
     public static void main(String[] args) throws Exception {
-        HelloWorldClient client = new HelloWorldClient("localhost", 8899);
+        HelloWorldClient client = new HelloWorldClient("localhost", 8080);
         try {
       /* Access a service running on the local machine on port 50051 */
             String user = "world";
